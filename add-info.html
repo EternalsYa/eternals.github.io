@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="styles.css">
     <title>Tambah Informasi</title>
     <script>
-
         function previewImage(event) {
             const imagePreview = document.getElementById('image-preview');
             const file = event.target.files[0];
@@ -38,6 +37,23 @@
             // Redirect ke index.html setelah menyimpan
             window.location.href = 'index.html';
         }
+
+        function deleteInfo() {
+            // Hapus informasi dari localStorage
+            localStorage.removeItem('uploadedInfo');
+            alert('Informasi telah dihapus.');
+        }
+
+        function loadInfo() {
+            const data = JSON.parse(localStorage.getItem('uploadedInfo'));
+            if (data) {
+                document.getElementById('info').value = data.info;
+                document.getElementById('image-preview').src = data.image;
+                document.getElementById('image-preview').style.display = 'block';
+            }
+        }
+
+        window.onload = loadInfo; // Muat informasi saat halaman dimuat
     </script>
 </head>
 <body>
@@ -55,6 +71,7 @@
 
             <button type="submit">Simpan Informasi</button>
         </form>
+        <button onclick="deleteInfo()">Hapus Informasi</button> <!-- Tombol hapus -->
     </main>
 </body>
 <footer></footer>
