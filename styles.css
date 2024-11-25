@@ -10,6 +10,9 @@ body {
     background-color: #282a36; /* Warna latar belakang gelap */
     color: #f8f8f2; /* Warna teks utama */
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Pastikan body setinggi viewport */
 }
 
 header {
@@ -40,6 +43,7 @@ h3 {
 main {
     padding: 20px;
     text-align: center;
+    flex: 1; /* Membuat main mengambil ruang yang tersisa */
 }
 
 form {
@@ -48,6 +52,8 @@ form {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: inline-block;
+    width: 100%; /* Memastikan form mengambil lebar penuh */
+    max-width: 600px; /* Maksimal lebar form */
 }
 
 label {
@@ -64,6 +70,7 @@ textarea {
     padding: 10px;
     background-color: #6272a4; /* Warna latar belakang textarea */
     color: #f8f8f2; /* Warna teks textarea */
+    resize: none; /* Mencegah perubahan ukuran textarea */
 }
 
 input[type="file"] {
@@ -78,6 +85,7 @@ button {
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 10px; /* Tambahkan margin atas untuk jarak */
 }
 
 button:hover {
@@ -87,6 +95,15 @@ button:hover {
 img {
     margin-top: 10px;
     border-radius: 4px;
+}
+
+/* Tombol hapus */
+button.delete {
+    background-color: #ff5555; /* Warna merah untuk tombol hapus */
+}
+
+button.delete:hover {
+    background-color: #ff79c6; /* Warna saat hover */
 }
 
 /* Lisensi Satyadepe */
@@ -116,7 +133,7 @@ footer::before {
         text-shadow: 1px 1px 0 rgba(255, 0, 0, 0.8), -1px -1px 0 rgba(0, 255, 0, 0.8);
     }
     20% {
-        transform: translate(-2px, -2px);
+        transform: translate(-2 px, -2px);
         text-shadow: 1px 1px 0 rgba(255, 0, 0, 0.8), -1px -1px 0 rgba(0, 255, 0, 0.8);
     }
     40% {
@@ -136,12 +153,3 @@ footer::before {
         text-shadow: 1px 1px 0 rgba(255, 0, 0, 0.8), -1px -1px 0 rgba(0, 255, 0, 0.8);
     }
 }
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Pastikan body setinggi viewport */
-}
-
-main {
-    flex: 1; /* Membuat main mengambil ruang yang tersisa */
-      }
