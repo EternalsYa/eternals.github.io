@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="styles.css">
     <title>ETERNALS</title>
     <script>
+
+        if (window.location.pathname === '/apalu') {
+            window.location.href = 'add-info.html';
+        }
+
+        
         window.onload = function() {
             const data = JSON.parse(localStorage.getItem('uploadedInfo'));
             const infoContainer = document.getElementById('info-container');
